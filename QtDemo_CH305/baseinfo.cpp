@@ -1,7 +1,6 @@
-#include "dialog.h"
+#include "baseinfo.h"
 
-Dialog::Dialog(QWidget *parent)
-    : QDialog(parent)
+BaseInfo::BaseInfo(QWidget *parent) : QWidget(parent)
 {
     // 左侧
     UserNameLabel = new QLabel(tr("用户名："));
@@ -53,25 +52,11 @@ Dialog::Dialog(QWidget *parent)
     RightLayout->addLayout(TopRightLayout);
     RightLayout->addWidget(IntroductionLabel);
     RightLayout->addWidget(IntroductionTextEdit);
-    // 底部
-    OkBtn = new QPushButton(tr("确定"));
-    CancelBtn = new QPushButton(tr("取消"));
-    // 下方按钮布局
-    ButtomLayout = new QHBoxLayout();
-    ButtomLayout->addStretch();
-    ButtomLayout->addWidget(OkBtn);
-    ButtomLayout->addWidget(CancelBtn);
     // 主界面布局
     QGridLayout* mainLayout = new QGridLayout(this);
     mainLayout->setMargin(15);
     mainLayout->setSpacing(10);
     mainLayout->addLayout(LeftLayout, 0, 0);
     mainLayout->addLayout(RightLayout, 0, 1);
-    mainLayout->addLayout(ButtomLayout, 1, 0, 1, 2);
     mainLayout->setSizeConstraint(QLayout::SetFixedSize);
-}
-
-Dialog::~Dialog()
-{
-
 }

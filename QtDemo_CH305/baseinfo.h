@@ -1,25 +1,24 @@
-#ifndef DIALOG_H
-#define DIALOG_H
+#ifndef BASEINFO_H
+#define BASEINFO_H
 
-#include <QDialog>
+#include <QWidget>
 
 #include <QLabel>
-#include <QPushButton>
-#include <QFrame>
-#include <QPixmap>
 #include <QLineEdit>
 #include <QComboBox>
 #include <QTextEdit>
 #include <QGridLayout>
+#include <QPushButton>
 
-class Dialog : public QDialog
+class BaseInfo : public QWidget
 {
     Q_OBJECT
-
 public:
-    Dialog(QWidget *parent = 0);
-    ~Dialog();
+    explicit BaseInfo(QWidget *parent = nullptr);
 
+signals:
+
+public slots:
 private:
     QLabel* UserNameLabel;
     QLabel* NameLabel;
@@ -42,9 +41,6 @@ private:
     QTextEdit* IntroductionTextEdit;
     QVBoxLayout* RightLayout;
 
-    QPushButton* OkBtn;
-    QPushButton* CancelBtn;
-    QHBoxLayout* ButtomLayout;
 };
 
-#endif // DIALOG_H
+#endif // BASEINFO_H
